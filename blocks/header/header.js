@@ -142,7 +142,7 @@ function buildPanel(item, idx) {
       }
       // compact list for the mobile accordion, labelled by the tile image
       const img = logo && logo.querySelector('img');
-      if (logo && cta && img && img.alt) {
+      if (logo && img && img.alt) {
         const mli = document.createElement('li');
         const ma = document.createElement('a');
         ma.href = logo.href;
