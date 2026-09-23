@@ -26,7 +26,7 @@
   /* layout */
   --content-max-width: 1160px;
   --section-header-height: 40px;
-  --nav-height: 64px;
+  --nav-height: 70px;
 
   /* heading sizes */
   --heading-size-xxl: 36px;
@@ -35,4 +35,11 @@
   --heading-size-m: 18px;
   --heading-size-s: 16px;
   --heading-size-xs: 14px;
+}
+
+/* header height: compact fixed bar on mobile, utility row + nav bar on desktop */
+@media (width >= 768px) {
+  :root {
+    --nav-height: 141px;
+  }
 }

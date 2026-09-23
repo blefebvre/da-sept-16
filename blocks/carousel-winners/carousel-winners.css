@@ -28,6 +28,8 @@
 
 /* slide: stacked and centered on mobile */
 .carousel-winners .carousel-winners-slide {
+  /* containing block for absolutely positioned children, so they stay inside the scroller */
+  position: relative;
   flex: 0 0 100%;
   scroll-snap-align: start;
   box-sizing: border-box;
