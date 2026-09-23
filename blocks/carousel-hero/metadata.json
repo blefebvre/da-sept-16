@@ -1,0 +1,40 @@
+{
+  "id": "carousel-hero",
+  "name": "carousel-hero",
+  "variantName": "carousel-hero",
+  "type": "carousel",
+  "baseBlock": "carousel",
+  "canonicalModel": "collection",
+  "version": "1.0.0",
+  "created": "2026-09-23T17:55:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.alc.ca/content/alc/en.html",
+    "discoveredDuring": "site-migration page analysis",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "density": "minimal",
+    "imagePattern": "large",
+    "purpose": "promo-hero",
+    "structure": "full-bleed linked image per slide + control bar (prev, dots, next)",
+    "isFullWidth": true,
+    "position": "top"
+  },
+  "contentPattern": {
+    "structure": "cell 1 = slide image; cell 2 = link to the slide destination (the CTA is part of the image)",
+    "buttonCount": 0,
+    "imageCount": 5
+  },
+  "options": [
+    { "label": "No autoplay", "class": "no-autoplay" }
+  ],
+  "memberVariantIds": ["carousel-hero"],
+  "usage": {
+    "pagesUsing": [
+      { "url": "https://www.alc.ca/content/alc/en.html", "instanceId": "1.1", "screenshot": "migration-work/screenshot.png" }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-23T17:55:00.000Z"
+  }
+}

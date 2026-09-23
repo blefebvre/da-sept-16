@@ -1,0 +1,165 @@
+/* carousel-hero: values extracted from www.alc.ca (.carousel.list.parbase.hero) */
+.carousel-hero {
+  position: relative;
+  color: var(--text-color);
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: relative;
+}
+
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+  scrollbar-width: none;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+  width: 100%;
+}
+
+/* full-bleed, image-only slide; whole image is the link */
+.carousel-hero .carousel-hero-slide-image {
+  display: block;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-image picture,
+.carousel-hero .carousel-hero-slide-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* mobile: only the desktop artwork is authored, so show it whole */
+.carousel-hero .carousel-hero-slide-image img {
+  aspect-ratio: 1900 / 525;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+/* optional authored text, overlaid on the image */
+.carousel-hero .carousel-hero-slide-content {
+  position: absolute;
+  inset: auto 16px 16px;
+  z-index: 1;
+}
+
+/* control bar: prev | dots | next (52px, translucent white) */
+.carousel-hero .carousel-hero-controls {
+  display: flex;
+  height: 52px;
+  padding: 0 5px;
+  background-color: rgb(255 255 255 / 90%);
+}
+
+.carousel-hero .carousel-hero-controls nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-hero .carousel-hero-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-indicator button {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 24px;
+  margin: 0 4px;
+  padding: 1px 6px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel-hero .carousel-hero-indicator button::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  transform: translate(-5px, -5px);
+}
+
+.carousel-hero .carousel-hero-indicator button:disabled {
+  cursor: default;
+}
+
+.carousel-hero .carousel-hero-indicator button:disabled::after {
+  background-color: var(--alc-blue);
+}
+
+.carousel-hero .carousel-hero-controls .slide-prev,
+.carousel-hero .carousel-hero-controls .slide-next {
+  position: relative;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 52px;
+  margin: 0;
+  padding: 1px 6px;
+  border: 0;
+  background: transparent;
+  color: var(--alc-blue);
+  cursor: pointer;
+}
+
+/* Material Icons chevron_left / chevron_right at 28px */
+.carousel-hero .carousel-hero-controls .slide-prev::after,
+.carousel-hero .carousel-hero-controls .slide-next::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-hero .carousel-hero-controls .slide-next::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+}
+
+@media (width >= 768px) {
+  /* source renders the artwork at natural size (525px tall), centered bottom */
+  .carousel-hero .carousel-hero-slide-image img {
+    height: 525px;
+    aspect-ratio: auto;
+  }
+
+  /* control bar overlays the bottom of the slide; inner row max 1200px */
+  .carousel-hero .carousel-hero-controls {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 10;
+    padding: 0 max(5px, calc((100% - 1200px) / 2 + 5px));
+  }
+}

@@ -1,0 +1,44 @@
+/* vertical stack of full-width, image-only promo banners (source: 10px margin between banners,
+   no radius/shadow, no hover effect) */
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.cards-promo .cards-promo-card-image {
+  display: block;
+  line-height: 0;
+}
+
+.cards-promo .cards-promo-card-image picture,
+.cards-promo .cards-promo-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cards-promo .cards-promo-card-image img {
+  object-fit: cover;
+}
+
+.cards-promo .cards-promo-card-body {
+  padding: 8px 0;
+}
+
+/* tablet: source keeps a single column at half the content width, left aligned */
+@media (width >= 768px) {
+  .cards-promo > ul {
+    width: 50%;
+  }
+}
+
+/* desktop: the section grid places the block in the 1/3 right rail — fill it */
+@media (width >= 900px) {
+  .cards-promo > ul {
+    width: auto;
+  }
+}

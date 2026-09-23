@@ -1,0 +1,40 @@
+{
+  "id": "carousel-winners",
+  "name": "carousel-winners",
+  "variantName": "carousel-winners",
+  "type": "carousel",
+  "baseBlock": "carousel",
+  "canonicalModel": "collection",
+  "version": "1.0.0",
+  "created": "2026-09-23T18:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.alc.ca/content/alc/en.html",
+    "discoveredDuring": "site-migration page analysis",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "imagePattern": "multiple",
+    "purpose": "winner-stories",
+    "structure": "circular photo | name + location + CTA | game logo + Winner label + prize amount; side arrows + dots",
+    "isFullWidth": true,
+    "hasBgImage": true
+  },
+  "contentPattern": {
+    "structure": "cell 1 = winner photo; cell 2 = heading (winner name), location paragraph, 'See all winners' link, game logo image, 'Winner' label, prize amount (optionally put logo, label and amount in a third cell)",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "options": [
+    { "label": "Autoplay", "class": "autoplay" }
+  ],
+  "memberVariantIds": ["carousel-winners"],
+  "usage": {
+    "pagesUsing": [
+      { "url": "https://www.alc.ca/content/alc/en.html", "instanceId": "2.2", "screenshot": "migration-work/screenshot.png" }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-23T18:00:00.000Z"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "alc",
+      "urls": [
+        "https://www.alc.ca/content/alc/en.html"
+      ],
+      "representativeUrl": "https://www.alc.ca/content/alc/en.html",
+      "description": "ALC homepage: hero promo carousel, recent winners carousel, featured games tiles with promo rail",
+      "urlPattern": "/content/alc/*",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".carousel.list.parbase.hero"
+          ]
+        },
+        {
+          "name": "carousel-winners",
+          "instances": [
+            ".winners_carousel.winners-carousel"
+          ]
+        },
+        {
+          "name": "cards-game",
+          "instances": [
+            ".cmp-container--game-tiles"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".cmp-container--hide-column-gutters"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "1",
+          "name": "Hero promo carousel",
+          "selector": [
+            ".carousel.list.parbase.hero"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "2",
+          "name": "Recent winners",
+          "selector": [
+            ".section-header.cmp-section-header--alc-blue"
+          ],
+          "style": "recent-winners",
+          "blocks": [
+            "carousel-winners"
+          ],
+          "defaultContent": [
+            ".cmp-section-header--alc-blue .cmp-section-header__title"
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Featured games and promotions",
+          "selector": [
+            ".section-header.cmp-section-header--alc-green"
+          ],
+          "style": "featured-games",
+          "blocks": [
+            "cards-game",
+            "cards-promo"
+          ],
+          "defaultContent": [
+            ".cmp-section-header--alc-green .cmp-section-header__title"
+          ]
+        }
+      ]
+    }
+  ]
+}

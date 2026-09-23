@@ -1,0 +1,38 @@
+/* Atlantic Lottery brand tokens (extracted from www.alc.ca) */
+:root {
+  /* fonts */
+  --heading-font-family: ubuntu, helvetica, arial, sans-serif;
+  --body-font-family: proxima_nova, proxima-nova, helvetica, arial, sans-serif;
+
+  /* core colors */
+  --background-color: #fff;
+  --text-color: #69727b;
+  --link-color: #006faf;
+  --link-hover-color: #005e95;
+  --light-color: #f5f7f8;
+  --dark-color: #00529b;
+  --border-color: #d4dadf;
+
+  /* brand palette */
+  --alc-blue: #009ddb;
+  --alc-green: #aaba0a;
+  --alc-sky: #65baf7;
+  --alc-navy: #00529b;
+  --alc-red: #ec2f2d;
+  --alc-orange: #f29400;
+  --alc-draw-green: #198754;
+  --alc-shadow: rgb(0 82 155 / 10%);
+
+  /* layout */
+  --content-max-width: 1160px;
+  --section-header-height: 40px;
+  --nav-height: 64px;
+
+  /* heading sizes */
+  --heading-size-xxl: 36px;
+  --heading-size-xl: 22px;
+  --heading-size-l: 20px;
+  --heading-size-m: 18px;
+  --heading-size-s: 16px;
+  --heading-size-xs: 14px;
+}

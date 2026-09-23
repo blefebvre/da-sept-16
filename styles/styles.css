@@ -1,3 +1,5 @@
+@import url('brand.css');
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -11,33 +13,20 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* colors, fonts and nav height come from brand.css */
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 15px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
+  --heading-font-size-xxl: 30px;
+  --heading-font-size-xl: 22px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
 }
 
 /* fallback fonts */
@@ -55,18 +44,13 @@
 
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: var(--heading-size-xxl);
+    --heading-font-size-xl: var(--heading-size-xl);
+    --heading-font-size-l: var(--heading-size-l);
+    --heading-font-size-m: var(--heading-size-m);
+    --heading-font-size-s: var(--heading-size-s);
+    --heading-font-size-xs: var(--heading-size-xs);
   }
 }
 
@@ -77,7 +61,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.43;
 }
 
 body.appear {
@@ -107,8 +91,8 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: 1.1;
   scroll-margin: 40px;
 }
 
@@ -179,16 +163,44 @@ button.button {
   max-width: 100%;
   margin: 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
+  border-radius: 30px;
+  padding: 0 20px;
+  min-height: 45px;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 41px;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* ALC arrow CTA: blue pill, white border, arrow-in-circle icon on the right */
+a.button.primary,
+button.button.primary,
+a.button.accent,
+button.button.accent {
+  position: relative;
+  justify-content: flex-start;
+  padding: 0 45px 0 15px;
+  box-shadow: 0 3px 5px 0 var(--alc-shadow);
+}
+
+a.button.primary::after,
+button.button.primary::after,
+a.button.accent::after,
+button.button.accent::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 35px;
+  height: 35px;
+  background: url('../icons/arrow-circle-white.svg') center / contain no-repeat;
+  transform: translateY(-50%);
 }
 
 a.button[aria-disabled="true"],
@@ -199,8 +211,8 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
+  border-color: var(--background-color);
+  background-color: var(--link-color);
   color: var(--background-color);
 }
 
@@ -208,9 +220,9 @@ a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--background-color);
+  background-color: var(--link-hover-color);
+  color: var(--background-color);
 }
 
 a.button.primary[aria-disabled="true"],
@@ -226,18 +238,18 @@ button.button.primary:disabled:focus-visible {
 
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
+  border-color: var(--link-color);
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--link-color);
 }
 
 a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
+  border-color: var(--link-hover-color);
   background-color: var(--light-color);
-  color: var(--dark-color);
+  color: var(--link-hover-color);
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -254,8 +266,8 @@ button.button.secondary:disabled:focus-visible {
 /* high-impact call-to-action */
 a.button.accent,
 button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
+  border-color: var(--background-color);
+  background-color: var(--alc-navy);
   color: var(--background-color);
 }
 
@@ -263,8 +275,9 @@ a.button.accent:hover,
 a.button.accent:focus-visible,
 button.button.accent:hover,
 button.button.accent:focus-visible {
-  border-color: var(--link-hover-color);
+  border-color: var(--background-color);
   background-color: var(--link-hover-color);
+  color: var(--background-color);
 }
 
 a.button.accent[aria-disabled="true"],
@@ -322,4 +335,89 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* first (hero) section sits flush against the next band */
+main > .section:first-of-type:has(.carousel-hero-wrapper) {
+  margin-bottom: 0;
+}
+
+main > .section:first-of-type > .carousel-hero-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+/* ALC section header bar: full-width colored band with a white h2 */
+main > .section.recent-winners > .default-content-wrapper:first-of-type,
+main > .section.featured-games > .default-content-wrapper:first-of-type {
+  max-width: none;
+  margin: 0;
+  padding: 10px max(24px, calc((100% - var(--content-max-width)) / 2 + 10px));
+  background-color: var(--alc-blue);
+}
+
+main > .section.featured-games > .default-content-wrapper:first-of-type {
+  background-color: var(--alc-green);
+}
+
+main > .section.recent-winners > .default-content-wrapper:first-of-type > h2,
+main > .section.featured-games > .default-content-wrapper:first-of-type > h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 19.8px;
+}
+
+/* recent winners: header bar + sky-blue band with map/wave artwork */
+main > .section.recent-winners {
+  margin: 0;
+}
+
+main > .section.recent-winners > .carousel-winners-wrapper {
+  max-width: none;
+  padding: 0;
+  background: var(--alc-sky) url('images/winners-bg.png') center / cover no-repeat;
+  color: #fff;
+}
+
+/* featured games: green header bar, then game tiles (2/3) beside promo rail (1/3) */
+main > .section.featured-games {
+  margin-top: 0;
+}
+
+main > .section.featured-games > .cards-game-wrapper,
+main > .section.featured-games > .cards-promo-wrapper {
+  padding-top: 20px;
+}
+
+@media (width >= 900px) {
+  main > .section.featured-games {
+    display: grid;
+    grid-template-columns:
+      minmax(24px, 1fr)
+      minmax(0, calc(var(--content-max-width) * 2 / 3))
+      minmax(0, calc(var(--content-max-width) / 3))
+      minmax(24px, 1fr);
+    align-items: start;
+  }
+
+  main > .section.featured-games > div {
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main > .section.featured-games > .cards-game-wrapper {
+    grid-column: 2;
+    padding: 20px 10px 0;
+  }
+
+  main > .section.featured-games > .cards-promo-wrapper {
+    grid-column: 3;
+    padding: 20px 10px 0;
+  }
 }
